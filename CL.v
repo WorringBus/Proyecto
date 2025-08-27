@@ -4,6 +4,6 @@ assign o_nand = i_bit1 ~& i_bit2;
 assign o_or = i_bit1 | i_bit2;
 assign o_nor = i_bit1 ~| i_bit2;
 assign o_xor = i_bit1 ^ i_bit2;
-assign o_and = i_bit1 ~^ i_bit2;
+assign o_xnor = i_bit1 ~^ i_bit2;
 assign o_not = ~i_bit1 | ~i_bit2;
 endmodule
