@@ -1,4 +1,3 @@
-// alu.v
 module ALU (
     input  [3:0] A,     
     input  [3:0] B,     
