@@ -1,38 +1,41 @@
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 
-module ALU_tb;
-
-reg [3:0] A;
-reg [3:0] B;
-reg [1:0] sel;
-
-wire [4:0] R;
+module ALU_tb();
+  reg [3:0] A_tb;
+  reg [3:0] B_tb;
+  reg sel_tb;
+  wire [3:0] R_tb;
 
 ALU uut (
-    .A(A),
-    .B(B),
-    .sel(sel),
-    .R(R)
+    .A(A_tb),
+    .B(B_tb),
+    .sel(sel_tb),
+    .R(R_tb)
 );
 
 initial begin
-    $dumpfile("alu_tb.vcd");
+    $dumpfile("dump.vcd");
     $dumpvars(0, ALU_tb);
-
-    $display("Tiempo | A    | B    | sel | Resultado");
-    $monitor("%4dns | %b | %b |  %b  | %b", $time, A, B, sel, R);
-
-    A = 4'b0011; B = 4'b0010; sel = 2'b00; #10;
-
-    A = 4'b0011; B = 4'b0010; sel = 2'b01; #10;
-
-    A = 4'b1111; B = 4'b1111; sel = 2'b00; #10;
-
-    A = 4'b1111; B = 4'b0000; sel = 2'b01; #10;
-
-    A = 4'b0101; B = 4'b0011; sel = 2'b10; #10;
-
+    A_tb = 4'b0011; 
+  	B_tb = 4'b0010; 
+  	sel_tb = 1'b0; 
+  	#100;
+    A_tb = 4'b0011; 
+  	B_tb = 4'b0010; 
+  	sel_tb = 1'b1; 
+  	#100;
+    A_tb = 4'b1111; 
+  	B_tb = 4'b1111; 
+  	sel_tb = 1'b0; 
+  	#100;
+    A_tb = 4'b1111; 
+  	B_tb = 4'b0000; 
+  	sel_tb = 1'b1; 
+  	#100;
+    A_tb = 4'b0101; 
+  	B_tb = 4'b0011; 
+  	sel_tb = 1'b0; 
+  	#100;
     $finish;
 end
-
 endmodule
