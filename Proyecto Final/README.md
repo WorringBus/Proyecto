@@ -1,7 +1,11 @@
 # Proyecto Final – Arquitectura de Computadoras
 # Pipeline MIPS de 5 etapas + Decodificador de Instrucciones en Python
 
-Alumno: Juan Jose Bugarin Salvatierra
+Equipo: 
+-Juan Jose Bugarin Salvatierra
+-Edgar Andres Basulto Silva
+-Maria Fernanda Lavadores Morgado
+
 Profesor: Ernesto López Arce
 Materia: Arquitectura de Computadoras
 Institución: Universidad de Guadalajara – CUCEI
